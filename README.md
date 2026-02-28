@@ -19,7 +19,7 @@
 #### basics-02 : Interpolation & Data binding
 
 - within createApp() is an object which is always required data as an object key.
-- this key is a function() which can be written in a short-hand form, and this always returns an object
+- Data key is a function() which can be written in a short-hand form, and this always returns an object
   - We can freely name object keys in the return object from Data's function
   ```
   const app = Vue.createApp({
@@ -39,3 +39,27 @@
       <p>Learn more <a v-bind:href="vueLink">About Vue</a></p>
       ``` 
   - Note that this will be linked and only worked under the scope of Vue App which we have mounted with
+
+- Methods key is an object containing many functions
+```
+const app = Vue.createApp({
+    data() {
+        return {
+          customizedKeyName: 'Hier is up to you',
+        };
+    },
+    methods: {
+      customizedFunctionName: function() {}
+      shorthandFunctionName() {}
+    }
+});
+app.mount('#user-goal');
+```
+  - We can execute an expression within an Interpolation, which mean we can also call a method in an interpolation.
+    ```
+    <p>{{ outputGoal() }}</p>
+    ```
+  - to interpret HTML tags within the output value as well we can use v-html
+    ```
+    <p v-html="outputGoal()"></p>
+    ```
