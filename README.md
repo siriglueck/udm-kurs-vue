@@ -32,4 +32,10 @@
   app.mount('#user-goal');
   ``` 
   - Then to display this object key we bind it with interpolation {{ customizedKeyName }}
+  - Interpolation is only available between openning and closing tags
+    - to use as an attribute, for example for a link, we use v-bind
+
+      ``` 
+      <p>Learn more <a v-bind:href="vueLink">About Vue</a></p>
+      ``` 
   - Note that this will be linked and only worked under the scope of Vue App which we have mounted with
