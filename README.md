@@ -4,12 +4,8 @@
 
 #### gs-02 to gs-03 : comparing Vanilla JS with Vue syntax
 - Need to install Vue either via npm or cdn
-- In app.js
-  - An object {} is defined within .createApp() which is mounted to element id="app"
-  ```
-  Vue.createApp({}).mount('#app');
-  ```
-- We can use vue to control the whole page like SPA or parts of web like widgets. This depends on which ID we mount with the app
+- Define scope of Vue in HTML file
+- Create App in JS file and mount it with the defined scope
 
 
 ---
@@ -17,49 +13,13 @@
 ### 🟢 1. Basic & Core Concepts
 
 #### basics-02 : Interpolation & Data binding
+- ```{{ Interpolation }}``` with expression
+- ```v-bind``` to make a dynamic href or src
 
-- within createApp() is an object which is always required data as an object key.
-- Data key is a function() which can be written in a short-hand form, and this always returns an object
-  - We can freely name object keys in the return object from Data's function
-  ```
-  const app = Vue.createApp({
-      data() {
-          return {
-            customizedKeyName: 'Hier is up to you',
-          };
-      }
-  });
-  app.mount('#user-goal');
-  ``` 
-  - Then to display this object key we bind it with interpolation {{ customizedKeyName }}
-  - Interpolation is only available between openning and closing tags
-    - to use as an attribute, for example for a link, we use v-bind
+#### basics-03 : Event binding & Event modifiers
+- ```v-on:click``` comparable with addEventListener('click', () => {})
+- ```v-on:input``` to garsp input from built-in event such event.target.value
+- ```v-on:submit.prevent``` using with Form to prevent reloading page after form submmission
+- ```v-on:keyup.enter``` comparable with addEventListener('keyup', () => {})
+- ```v-once to prevent``` data re-rendering and make it static
 
-      ``` 
-      <p>Learn more <a v-bind:href="vueLink">About Vue</a></p>
-      ``` 
-  - Note that this will be linked and only worked under the scope of Vue App which we have mounted with
-
-- Methods key is an object containing many functions
-```
-const app = Vue.createApp({
-    data() {
-        return {
-          customizedKeyName: 'Hier is up to you',
-        };
-    },
-    methods: {
-      customizedFunctionName: function() {}
-      shorthandFunctionName() {}
-    }
-});
-app.mount('#user-goal');
-```
-  - We can execute an expression within an Interpolation, which mean we can also call a method in an interpolation.
-    ```
-    <p>{{ outputGoal() }}</p>
-    ```
-  - to interpret HTML tags within the output value as well we can use v-html
-    ```
-    <p v-html="outputGoal()"></p>
-    ```
