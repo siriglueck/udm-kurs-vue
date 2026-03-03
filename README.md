@@ -31,3 +31,11 @@
 - ```:class``` shorthand for v-bind:class
 - ```@click``` shorthand for v-on:click (also possible for div not only on button listening)
 
+#### basics-10 to basic-13 : Dynamic Styling
+- ```:style={borderColor: boxASelected ? 'red' : '#ccc'} @click="boxSelected('A')"``` dynamic inline styles
+
+- ```:class={boxASelected ? 'demo active' : 'demo'} @click="boxSelected('A')"``` dynamic css class styles
+
+- ```class="demo" :class={active: boxSelected}``` easier dynamic css class styles
+
+- ```class="demo" :class={active: boxSelected}``` dynamic css array class syntax
