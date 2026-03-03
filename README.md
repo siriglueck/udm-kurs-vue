@@ -23,8 +23,11 @@
 - ```v-on:keyup.enter``` comparable with addEventListener('keyup', () => {})
 - ```v-once to prevent``` data re-rendering and make it static
 
-#### basics-05 : Data and Event binding with new features
+#### basics-05 to basic-09 : Data and Event binding, shorthands and new features (method, computed, watch)
 - ```v-modell``` both data and event binding, comparable with v-on and v-bind
 - ```method: { incretment() {} }``` feature - action once event got trickled ohne cache
 - ```computed: { fullName() {} }``` feature - cache, return a value once depedencies are changed - calculation
 - ```watch: { search(newValue) {} }``` feature - action after value changed - validation, async
+- ```:class``` shorthand for v-bind:class
+- ```@click``` shorthand for v-on:click (also possible for div not only on button listening)
+
