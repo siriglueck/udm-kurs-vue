@@ -14,12 +14,17 @@
 
 #### basics-02 : Interpolation & Data binding
 - ```{{ Interpolation }}``` with expression
-- ```v-bind``` to make a dynamic href or src
+- ```v-bind``` to bind attribute and make it dynamic
 
-#### basics-03 : Event binding & Event modifiers
+#### basics-03 to basic-04 : Event binding & Event modifiers
 - ```v-on:click``` comparable with addEventListener('click', () => {})
 - ```v-on:input``` to garsp input from built-in event such event.target.value
 - ```v-on:submit.prevent``` using with Form to prevent reloading page after form submmission
 - ```v-on:keyup.enter``` comparable with addEventListener('keyup', () => {})
 - ```v-once to prevent``` data re-rendering and make it static
 
+#### basics-05 : Data and Event binding with new features
+- ```v-modell``` both data and event binding, comparable with v-on and v-bind
+- ```method: { incretment() {} }``` feature - action once event got trickled ohne cache
+- ```computed: { fullName() {} }``` feature - cache, return a value once depedencies are changed - calculation
+- ```watch: { search(newValue) {} }``` feature - action after value changed - validation, async
