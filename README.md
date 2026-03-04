@@ -45,7 +45,7 @@
 
 ### 🟢 3. Conditional Rendering and Iteration
 
-#### lists-cond-02 :  
+#### lists-cond-02 :  Conditional Rendering
    
 - v-if, v-else-if, v-else really removes and adds elements from and to the DOM, suitable for adding list elements
     - ```v-if="goals.length === 0"``` if condition
@@ -54,4 +54,15 @@
     
 - Alternative, suitable for toggle visibility
     - ```v-show``` just hide and show elements with CSS which is equivalent to ```style="display: none;"```
+
+#### lists-cond-03 to list-cond-04 : Iteration
+- ```<li v-for="g in goals">{{ g }}</li>``` loop and render, g can be rendered within its scope only
+
+- ```<li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>``` loop an array with index numbers
+
+- ```<li v-for="(value, key, index) in {name: 'Max', age: 31}">{{ key }}: {{ value }} - {{ index }}</li>``` loop an object through keys and values
+
+
+
+
 
