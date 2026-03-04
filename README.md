@@ -10,7 +10,7 @@
 
 ---
 
-### 🟢 1. Basic & Core Concepts
+### 🟢 2. Basic & Core Concepts
 
 #### basics-02 : Interpolation & Data binding
 - ```{{ Interpolation }}``` with expression
@@ -39,3 +39,19 @@
 - ```class="demo" :class={active: boxSelected}``` easier dynamic css class styles
 
 - ```class="demo" :class={active: boxSelected}``` dynamic css array class syntax
+
+
+---
+
+### 🟢 3. Conditional Rendering and Iteration
+
+#### lists-cond-02 :  
+   
+- v-if, v-else-if, v-else really removes and adds elements from and to the DOM, suitable for adding list elements
+    - ```v-if="goals.length === 0"``` if condition
+    - ```v-else-if="goals.length > 5" ``` else if
+    - ```v-else``` else
+    
+- Alternative, suitable for toggle visibility
+    - ```v-show``` just hide and show elements with CSS which is equivalent to ```style="display: none;"```
+
