@@ -56,13 +56,28 @@
     - ```v-show``` just hide and show elements with CSS which is equivalent to ```style="display: none;"```
 
 #### lists-cond-03 to list-cond-04 : Iteration
-- ```<li v-for="g in goals">{{ g }}</li>``` loop and render, g can be rendered within its scope only
+- Dont use v-if and v-for one the same element, use a wrapper with v-if instead
+    - ```<li v-for="g in goals">{{ g }}</li>``` loop and render, g can be rendered within its scope only
 
-- ```<li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>``` loop an array with index numbers
+    - ```<li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>``` loop an array with index numbers
 
-- ```<li v-for="(value, key, index) in {name: 'Max', age: 31}">{{ key }}: {{ value }} - {{ index }}</li>``` loop an object through keys and values
+    - ```<li v-for="(value, key, index) in {name: 'Max', age: 31}">{{ key }}: {{ value }} - {{ index }}</li>``` loop an object through keys and values
+
+#### lists-cond-05 : adding and removing list items
+
+- adding a list
+    - ```<input type="text" v-model="enteredGoalValue" /><button @click="addGoal">Add Goal</button>```
+
+- removing a list
+    - ```<ul v-else> <li v-for="(goal, index) in goals" @click="removeGoal(index)">{{ goal }} - {{ index }}</li></ul>```
+
+- sample methods
+    - ```methods: { addGoal() { this.goals.push(this.enteredGoalValue); }, removeGoal(idx) { this.goals.splice(idx, 1); }} ```
 
 
+#### lists-cond-06 : List & Keys
 
-
-
+- Vue reuses DOM to optimize performance. This can lead to bugs if elements contain state
+- Bind the ```:key="goal"``` attribute to a unique value help Vue identify elements that belong to list content (usually use with ```v-for```)
+- ```@click.stop``` this can stop an event which is inherited into its nest
+    - ```<li v-for="(goal, index) in goals" :key="goal" @click="removeGoal(index)"> <p>{{ goal }} - {{ index }}</p> <input type="text" @click.stop></li>```
