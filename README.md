@@ -90,3 +90,8 @@
 - We can have as many apps as we wants this is like widgets but these apps can NOT communicate with each other unlike components
 - Also the app can be ```app.unmount();``` as well
 
+#### behind-scenes-05 : refs
+- Direct access, point to the DOM without going through data or props. (manipulate it directly, without reactivity)
+- ```<ChildComponent ref="child" />```
+- ```this.$refs.child.someMethod()```
+
