@@ -81,3 +81,12 @@
 - Bind the ```:key="goal"``` attribute to a unique value help Vue identify elements that belong to list content (usually use with ```v-for```)
 - ```@click.stop``` this can stop an event which is inherited into its nest
     - ```<li v-for="(goal, index) in goals" :key="goal" @click="removeGoal(index)"> <p>{{ goal }} - {{ index }}</p> <input type="text" @click.stop></li>```
+
+---
+
+### 🟢 5. Behind the scence
+
+#### behind-scenes-03 : One App vs Multiple Apps
+- We can have as many apps as we wants this is like widgets but these apps can NOT communicate with each other unlike components
+- Also the app can be ```app.unmount();``` as well
+
