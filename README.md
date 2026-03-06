@@ -95,3 +95,13 @@
 - ```<ChildComponent ref="child" />```
 - ```this.$refs.child.someMethod()```
 
+#### behind-scenes-06 : Vue Life Cycle
+- Inside the app object, there are actually predefined built-in functions reflecting time sequences 
+  ```beforeCreate() {},```
+  ```created() {},```
+  ```beforeMount() {},```
+  ```mounted() {},```
+  ```beforeUpdate() {},```
+  ```updated() {},```
+  ```beforeUnmount() {},```
+  ```unmounted() {},```
