@@ -105,3 +105,14 @@
   ```updated() {},```
   ```beforeUnmount() {},```
   ```unmounted() {},```
+
+---
+
+### 🟢 7. Vue Cli : creating project with a build tool
+
+#### vue-cli-01 to vue-cli-03 : Overview of Project Struture
+- Define a component under ```src/components/PascalCaseName.vue``` following a convention
+- Adding the component in .js (do not forget to import) 
+    - ```import FriendContact from './components/FriendContact.vue';```
+    - ```app.component('friend-contact', FriendContact);```
+- Call the component like this ```<friend-contact></friend-contact>```
