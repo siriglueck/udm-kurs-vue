@@ -149,7 +149,7 @@
     </ul>
     ```
 
-#### cmp-communication-05 to cmp-communication-05 : Child -> Parent Communication using Emit and custom events
+#### cmp-communication-05 to cmp-communication-06 : Child -> Parent Communication using Emit and custom events
 - Emit is a built-in function ```this.$emit()``` which can be called from inside a component and send a data as a second argument to the parent element ```this.$emit('toggle-favorite', this.id);```
 - The parent component listen to its child ```@toggle-favorite="toggleFavoriteStatus"``` and recieved the sent value 
     ```
@@ -160,3 +160,14 @@
     ```
     - ```https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find```
 - ```kebab-case``` ist a naming convention for this custom event 
+- Emits can also be difined and validated as a component object property, this help other developers to understand the component easier
+    ```
+    export default {
+        props: {},
+        emits: ['toggle-favorite'],
+        data() {
+            return {};
+        },
+        methods: {}
+    }
+    ```
