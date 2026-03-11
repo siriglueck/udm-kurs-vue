@@ -111,7 +111,7 @@
 ### 🟢 7. Vue Cli : creating project with a build tool
 
 #### vue-cli-01 to vue-cli-03 : Overview of Project Struture
-- Define a component under src/components/PascalCaseName.vue``` following a convention
+- Define a component under ``` src/components/PascalCaseName.vue``` following a convention
 - Adding the component in .js (do not forget to import) 
     - ```import FriendContact from './components/FriendContact.vue';```
     - ```app.component('friend-contact', FriendContact);```
@@ -142,3 +142,15 @@
       ></friend-contact>
     </ul>
     ```
+
+#### vue-cli-05: Child -> Parent Communication
+- Emit is a built-in function ```this.$emit()``` which can be called from inside a component and send a data as a second argument to the parent element ```this.$emit('toggle-favorite', this.id);```
+- The parent component listen to its child ```@toggle-favorite="toggleFavoriteStatus"``` and recieved the sent value 
+    ```
+    toggleFavoriteStatus(friendId) {
+      const identifiedFriend = this.friends.find(
+        (friend) => friend.id === friendId
+      );
+    ```
+    - ```https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find```
+- ```kebab-case``` ist a naming convention for this custom event 
