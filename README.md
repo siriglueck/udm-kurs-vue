@@ -110,12 +110,18 @@
 
 ### 🟢 7. Vue Cli : creating project with a build tool
 
-#### vue-cli-01 to vue-cli-03 : Overview of Project Struture
+#### vue-cli-01 to vue-cli-03 : Overview of Project Struture and introducing props
 - Define a component under ``` src/components/PascalCaseName.vue``` following a convention
 - Adding the component in .js (do not forget to import) 
     - ```import FriendContact from './components/FriendContact.vue';```
     - ```app.component('friend-contact', FriendContact);```
 - Call the component like this ```<friend-contact></friend-contact>```
+
+---
+
+### 🟢 8. Component : Communication
+
+#### cmp-communication-01 to cmp-communication-03 : defining and validating props
 - Props can be validated by setting it as an object and also add a validator. The error will be shown in console. This help regulating when work with other developers. ``` https://vuejs.org/guide/components/props.html ```
     ```
     props: {
@@ -143,7 +149,7 @@
     </ul>
     ```
 
-#### vue-cli-05: Child -> Parent Communication
+#### cmp-communication-05 to cmp-communication-05 : Child -> Parent Communication using Emit and custom events
 - Emit is a built-in function ```this.$emit()``` which can be called from inside a component and send a data as a second argument to the parent element ```this.$emit('toggle-favorite', this.id);```
 - The parent component listen to its child ```@toggle-favorite="toggleFavoriteStatus"``` and recieved the sent value 
     ```
