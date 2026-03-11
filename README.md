@@ -111,8 +111,34 @@
 ### 🟢 7. Vue Cli : creating project with a build tool
 
 #### vue-cli-01 to vue-cli-03 : Overview of Project Struture
-- Define a component under ```src/components/PascalCaseName.vue``` following a convention
+- Define a component under src/components/PascalCaseName.vue``` following a convention
 - Adding the component in .js (do not forget to import) 
     - ```import FriendContact from './components/FriendContact.vue';```
     - ```app.component('friend-contact', FriendContact);```
 - Call the component like this ```<friend-contact></friend-contact>```
+- Props can be validated by setting it as an object and also add a validator. The error will be shown in console. This help regulating when work with other developers. ``` https://vuejs.org/guide/components/props.html ```
+    ```
+    props: {
+    isFavorite: {
+      type: String,
+      required: false,
+      default: '0',
+      validator: function(value) {
+        return value === '1' || value === '0';
+      }
+    },
+    ```
+
+- Also we can bind props with v-bind to make it dynamic 
+    ```
+    <ul>
+      <friend-contact
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="true"
+      ></friend-contact>
+    </ul>
+    ```
