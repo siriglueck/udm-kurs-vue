@@ -171,3 +171,23 @@
         methods: {}
     }
     ```
+
+#### cmp-communication-07 to cmp-communication-09 : provide and inject (passing through)
+- provide and inject can be define in a configuration objects like data, method etc.
+- we define provide in a parent component and inject in a child element
+- consider to use these as alternative from props and custom events to avoid unneccessary code inbetween many levels of parent and child
+  ```
+  provide() {
+    return { 
+      topics: this.topics,
+      selectTopic: this.activateTopic
+    };
+  },
+  ```
+  ```
+  <script>
+  export default {
+  inject: ['topics'],
+  };
+  </script>
+  ```
