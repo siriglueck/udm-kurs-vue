@@ -191,3 +191,20 @@
   };
   </script>
   ```
+
+---
+
+### 🟢 9. Component : Advance
+
+#### cmp-adv-01 to cmp-adv-02 : scoped style
+  - having style without attribute scoped will apply styles to the whole project no matter in which component it is defined.
+  - using scoped attribute will make those styles render template within the same file only
+    ```
+    <style scoped>
+    ...
+    </style>
+    ```
+
+
+
+
