@@ -205,6 +205,40 @@
     </style>
     ```
 
+#### cmp-adv-03 to cmp-adv-06 : slots, named slots & scoped slots
+  - Parent provide dynamic HTML content to ```<slot></slot>``` in a Child
+  - Where there are >1 slots, we can name them in the child component like
+    ```
+    <slot name="slotName"></slot>
+    <slot name="default"></slot>
+    ```
+    and in the parent we can bind it using ```v-slot:slotName``` or ```#slotName``` for shorthand for example
+    ```
+    <child-comp-name>
+      <template #slotName>
+      </template>
+      <template #default>
+      </template>
+    </child-comp-name>
+    ```
+
+#### cmp-adv-07 to cmp-adv-08 : dynamic components & teleport
+  - keep-alive helps remain state such filled inputs remain while switching components
+    ```
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
+    ```
+  - teleport will determine where the code should be rendered. (prevent unwanted nested DOM)
+    ```
+    <teleport to="body">
+      <error-alert v-if="inputIsInvalid">
+        <h2>Input is invalid!</h2>
+        <p>Please enter at least a few characters...</p>
+        <button @click="confirmError">Okay</button>
+      </error-alert>
+    </teleport>
+    ```
 
 
 
